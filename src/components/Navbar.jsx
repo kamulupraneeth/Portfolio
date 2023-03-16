@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     FaBars,
     FaTimes,
@@ -13,12 +13,31 @@ import { Link } from 'react-scroll';
 import Pdf from '../Documents/praneeth_resume.pdf';
 const Navbar = () => {
     const [nav, setNav] = useState(false);
+
+    const [navbar, setNavbar] = useState(false);
+
     const handleClick = () => setNav(!nav);
 
+    const changeBackground = () => {
+        console.log(window.scrollY)
+        if (window.scrollY >= 66) {
+            setNavbar(true)
+        } else {
+            setNavbar(false)
+        }
+    }
+
+    useEffect(() => {
+        changeBackground()
+        window.addEventListener("scroll", changeBackground)
+    })
+
+    const navbarClasses = navbar ? "fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#faebd7] text-[#333]  transition-all duration-500 ease-in-out" : "fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#0a192f] text-gray-300"
+
     return (
-        <div className='fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#0a192f] text-gray-300'>
+        <div className={navbarClasses}>
             <div>
-                {/* <h1 className=' font-thin text-2xl italic font-serif'>TB</h1> */}
+                <h1 className={navbar ? 'font-thin text-2xl bg-[#ff7373] rounded-lg py-[0] px-[18px]' : "font-thin text-2xl bg-[#666666] rounded-lg py-[0] px-[18px]"}>Portfolio</h1>
             </div>
             {/* menu */}
             <ul className='hidden md:flex gap-x-8'>
