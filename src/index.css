@@ -36,3 +36,15 @@
     width: 100%;
     background: red;
 }
+.navbar-not-scroll-elements::after{
+    content: '';
+  display: block;
+  height: 2px;
+  width: 0px;
+  background: transparent;
+  transition: width .5s linear, background-color .5s linear;
+}
+.navbar-not-scroll-elements:hover::after{
+    width: 100%;
+    background: #fff;
+}

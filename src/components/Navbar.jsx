@@ -32,26 +32,26 @@ const Navbar = () => {
         window.addEventListener("scroll", changeBackground)
     })
 
-    const navbarClasses = navbar ? "fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#faebd7] text-[#333]  transition-all duration-500 ease-in-out" : "fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#0a192f] text-gray-300"
+    const navbarClasses = navbar ? "fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#fff] text-[#333] font-bold transition-all duration-500 ease-in-out" : "fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#BC382E] text-gray-300"
 
     return (
         <div className={navbarClasses}>
             <div>
-                <h1 className={navbar ? 'font-thin text-2xl bg-[#ff7373] rounded-lg py-[0] px-[18px]' : "font-thin text-2xl bg-[#666666] rounded-lg py-[0] px-[18px]"}>Portfolio</h1>
+                <h1 className={navbar ? 'font-bold text-2xl rounded-lg py-[5px] px-[35px] bg-[#ff8000] text-[#fff]' : "font-extrabold text-2xl rounded-lg py-[0] px-[18px]"}>Portfolio</h1>
             </div>
             {/* menu */}
-            <ul className='hidden md:flex gap-x-8'>
-                <li className='navbar-elements'>
+            <ul className={navbar ? "hidden md:flex gap-x-8 tracking-[2px]" : 'hidden md:flex gap-x-8 tracking-[2px] font-semibold'}>
+                <li className={navbar ? "hover:text-[#ff8000] navbar-elements" : 'navbar-not-scroll-elements'}>
                     <Link to='home' smooth={true} duration={500}>
                         Home
                     </Link>
                 </li>
-                <li className='navbar-elements'>
+                <li className={navbar ? "hover:text-[#ff8000] navbar-elements" : 'navbar-not-scroll-elements'}>
                     <Link to='about' smooth={true} duration={500}>
                         About
                     </Link>
                 </li>
-                <li className='navbar-elements'>
+                <li className={navbar ? "hover:text-[#ff8000] navbar-elements" : 'navbar-not-scroll-elements'}>
                     <Link to='skills' smooth={true} duration={500}>
                         Skills
                     </Link>
@@ -61,7 +61,7 @@ const Navbar = () => {
                         Work
                     </Link>
                 </li> */}
-                <li className='navbar-elements'>
+                <li className={navbar ? "hover:text-[#ff8000] navbar-elements" : 'navbar-not-scroll-elements'}>
                     <Link to='contact' smooth={true} duration={500}>
                         Contact
                     </Link>
@@ -76,7 +76,7 @@ const Navbar = () => {
                 className={
                     !nav
                         ? 'hidden'
-                        : 'absolute top-0 left-0 w-full h-screen bg-[#0a192f] flex flex-col justify-center items-center'
+                        : 'absolute top-0 left-0 w-full h-screen bg-[#BC382E] flex flex-col justify-center items-center'
                 }
             >
                 <li className='py-6 text-4xl'>

@@ -7,7 +7,7 @@ const Home = ({ content }) => {
     return (
         <div
             name="home"
-            className="h-screen w-full bg-[#0a192f]"
+            className="h-screen w-full bg-[#BC382E]"
         >
             <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row">
                 <div className="flex flex-col justify-center h-full">
@@ -15,7 +15,7 @@ const Home = ({ content }) => {
                         {content?.fields.landing_caption}
                         {/* I'm a Full Stack Web Developer */}
                     </h2>
-                    <p className="text-gray-500 py-4 max-w-md">
+                    <p className="text-[#fff] py-4 max-w-md">
                         {content?.fields.landing_main_details}
                         {/* I have 4 years of experience in graphics design and web development.
                         Currently, I love to work on web application using technologies like
@@ -26,7 +26,7 @@ const Home = ({ content }) => {
                             to="about"
                             smooth
                             duration={500}
-                            className="group text-white w-fit px-6 py-3 my-2 flex items-center rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 cursor-pointer"
+                            className="group text-white w-fit px-[20px] py-[10px] my-2 flex items-center text-[18px] rounded-md bg-[#ff8000] cursor-pointer"
                         >
                             About Me
                             <span className="group-hover:rotate-90 duration-300">
