@@ -48,3 +48,22 @@
     width: 100%;
     background: #fff;
 }
+@media (min-width:320px) and (max-width:639px){
+    .about_section{
+        padding: 2rem 0;
+        width:100%;
+    }
+    .skill_section{
+        padding-top: 2rem;
+    }
+    .contact_section{
+        margin-bottom: 0;
+    } 
+    .contact_main_section > div{
+        padding-bottom: 0;
+        margin-top: 30px;
+    }
+    .contact_main_section button{
+        margin-top: 1rem;
+    }
+}

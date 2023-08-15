@@ -12,14 +12,10 @@ const Home = ({ content }) => {
             <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row">
                 <div className="flex flex-col justify-center h-full">
                     <h2 className="text-4xl sm:text-7xl font-bold text-white">
-                        {content?.fields.landing_caption}
-                        {/* I'm a Full Stack Web Developer */}
+                        I'm a react js developer
                     </h2>
-                    <p className="text-[#fff] py-4 max-w-md">
-                        {content?.fields.landing_main_details}
-                        {/* I have 4 years of experience in graphics design and web development.
-                        Currently, I love to work on web application using technologies like
-                        React, Tailwind, Next.js and Mongodb. */}
+                    <p className="text-[#fff] py-4 max-w-md lg:max-w-3xl">
+                    Highly skilled and results-oriented software developer with 2 years of experience specializing in frontend development with React.js and its ecosystem. Proven track record of delivering high-quality, maintainable, and scalable solutions. Passionate about new technologies and always eager to learn.
                     </p>
                     <div>
                         <Link
