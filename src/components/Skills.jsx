@@ -1,6 +1,9 @@
 import React from 'react';
 
 const Skills = ({ content }) => {
+
+    const skills = ['Html5','Css3','Bootstrap 4,5','JavaScript','React Js','React Native','Tailwind Css'];
+
     return (
         <div name='skills' className='w-full h-screen bg-[#577783] text-gray-300'>
             {/* Container */}
@@ -10,49 +13,13 @@ const Skills = ({ content }) => {
                     <p className='py-4 text-2xl'>{content?.fields.skill_header}</p>
                 </div>
                 <div className='w-full grid grid-cols-2 sm:grid-cols-4 gap-4 text-center py-8'>
-                    {content?.fields.skills.map((skill, index) => {
+                    {skills.map((skill, index) => {
                         return (
                             <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                                <p className='my-4'>{skill.terminology_learnt}</p>
+                                <p className='my-4'>{skill}</p>
                             </div>
                         )
                     })}
-                    {/* <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                        <p className='my-4'>HTML</p>
-                    </div>
-                    <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                        <p className='my-4'>CSS</p>
-                    </div>
-                    <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                        <p className='my-4'>JAVASCRIPT</p>
-                    </div>
-                    <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                        <p className='my-4'>REACT</p>
-                    </div>
-                    <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                        <p className='my-4'>GITHUB</p>
-                    </div>
-                    <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                        <p className='my-4'>NODE JS</p>
-                    </div>
-                    <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                        <p className='my-4'>MONGO DB</p>
-                    </div>
-                    <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                        <p className='my-4'>AWS</p>
-                    </div>
-                    <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                        <p className='my-4'>Django</p>
-                    </div>
-                    <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                        <p className='my-4'>Sass</p>
-                    </div>
-                    <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                        <p className='my-4'>Mongodb</p>
-                    </div>
-                    <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                        <p className='my-4'>GraphQl</p>
-                    </div> */}
                 </div>
             </div>
         </div>

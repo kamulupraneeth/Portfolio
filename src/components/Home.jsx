@@ -1,21 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { HiArrowNarrowRight } from 'react-icons/hi';
-import me from '../assets/me.png';
+import image from '../assets/image.png';
 import { Link } from "react-scroll";
+// import NameAnimation from './NameAnimation';
+import {ReactTyped} from 'react-typed';
+import bgImage from '../assets/bgImage.jpg';
 
-const Home = ({ content }) => {
+const Home = ({ isMenuOpen }) => {
     return (
+        <>
+      
         <div
             name="home"
-            className="h-screen w-full bg-[#BC382E]"
-        >
-            <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row">
-                <div className="flex flex-col justify-center h-full">
+            className="h-screen w-full bg-[#BC382E] sm:w-full"
+            style={{backgroundImage:`url(${bgImage})`,backgroundSize:'cover',backgroundPosition:'center'}}
+        > 
+            <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-between h-full px-4 md:flex-row gap-4">
+                <div className="flex flex-col justify-center p-8 my-auto">
                     <h2 className="text-4xl sm:text-7xl font-bold text-white">
-                        I'm a react js developer
-                    </h2>
+                    <p className={isMenuOpen ? 'hide-cursor' : ''}>
+                    <ReactTyped
+                        strings={[
+                            "I am Kamulu Praneeth",
+                            "Expert Front End Developer",
+                            "Passionate about Cutting-Edge Technologies",
+                            "JavaScript and React Specialist",
+                            "Building Seamless User Experiences",
+                            "Innovative and Solution-Oriented"
+                        ]}
+                        typeSpeed={40}
+                        backSpeed={50}
+                        loop
+                    />
+                    </p>
+                    </h2>           
                     <p className="text-[#fff] py-4 max-w-md lg:max-w-3xl">
-                    Highly skilled and results-oriented software developer with 2 years of experience specializing in frontend development with React.js and its ecosystem. Proven track record of delivering high-quality, maintainable, and scalable solutions. Passionate about new technologies and always eager to learn.
+                        Let's connect to bring your ideas to life with modern web technologies
                     </p>
                     <div>
                         <Link
@@ -31,15 +51,9 @@ const Home = ({ content }) => {
                         </Link>
                     </div>
                 </div>
-                <div className='hidden'>
-                    <img
-                        src={me}
-                        alt="my profile"
-                        className="rounded-2xl mx-auto w-2/3 md:w-full"
-                    />
-                </div>
             </div>
         </div>
+        </>
     );
 };
 export default Home;

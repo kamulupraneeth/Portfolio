@@ -1,6 +1,6 @@
 import React from "react";
 import '../index.css';
-const About = ({ content }) => {
+const About = () => {
     return (
         <div
             name="about"
@@ -20,12 +20,12 @@ const About = ({ content }) => {
                     <div className="max-w-[1000px] w-full grid sm:grid-cols-2 gap-8 px-4">
                         <div className="sm:text-right text-4xl font-bold">
                             <p>
-                                {content?.fields.about_caption}
+                                Hi.I'm Kamulu Praneeth.Nice to meet you. Please take a look around.
                             </p>
                         </div>
                         <div>
                             <p>
-                                {content?.fields.about_main_text}
+                            With 2 years and 6 months of hands-on experience in front-end development, I specialize in crafting dynamic and responsive web applications using React.js. My journey into web development began with a fascination for creating interactive user interfaces, and it has since evolved into a deep passion for leveraging React's capabilities to deliver seamless user experiences.
                             </p>
                         </div>
                     </div>

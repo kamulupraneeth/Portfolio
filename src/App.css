@@ -6,6 +6,9 @@
   height: 40vmin;
   pointer-events: none;
 }
+.hide-cursor .typed-cursor{
+  opacity: 0;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

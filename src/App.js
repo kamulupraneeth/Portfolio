@@ -11,6 +11,7 @@ import Works from './components/Works';
 function App() {
   const readtoken = "7c15ff927f389e502e7bc63e02212cd6e4bbbce2";
   const [data, setData] = useState([]);
+  const [isMenuOpen,setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const getData = async () => {
@@ -24,11 +25,11 @@ function App() {
   },[])
   return (
     <div>
-      <Navbar />
-      <Home content={data[0]}/>
+      <Navbar setIsMenuOpen={setIsMenuOpen} isMenuOpen={isMenuOpen}/>
+      <Home content={data[0]} isMenuOpen={isMenuOpen}/>
       <About content={data[1]}/>
       <Skills content={data[2]}/>
-      {/* <Works/> */}
+      <Works/>
       <Contact/>
     </div>
   );

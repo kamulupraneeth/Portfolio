@@ -8,18 +8,26 @@ import {
     FaLinkedinIn,
 } from 'react-icons/fa';
 import { HiOutlineMail } from 'react-icons/hi';
-import { BsFillPersonLinesFill } from 'react-icons/bs';
+import { BsFillPersonLinesFill } from 'react-icons/bs'; 
 import { Link } from 'react-scroll';
-import Pdf from '../Documents/praneeth-resume.pdf';
-const Navbar = () => {
+import Pdf from '../Documents/KAMULU_PRANEETH.pdf';
+
+
+    const Navbar = ({setIsMenuOpen,isMenuOpen}) => {
     const [nav, setNav] = useState(false);
 
     const [navbar, setNavbar] = useState(false);
 
-    const handleClick = () => setNav(!nav);
+    const handleClick = () => {
+        if(isMenuOpen){
+            setIsMenuOpen(false);
+        }else{
+            setIsMenuOpen(true);
+        }
+        setNav(!nav);
+    }
 
     const changeBackground = () => {
-        console.log(window.scrollY)
         if (window.scrollY >= 66) {
             setNavbar(true)
         } else {
@@ -32,7 +40,7 @@ const Navbar = () => {
         window.addEventListener("scroll", changeBackground)
     })
 
-    const navbarClasses = navbar ? "fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#fff] text-[#333] font-bold transition-all duration-500 ease-in-out" : "fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#BC382E] text-gray-300"
+    const navbarClasses = navbar ? "fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#06141b] text-[#333] font-bold transition-all duration-500 ease-in-out" : "fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#b61a2b] text-gray-300"
 
     return (
         <div className={navbarClasses}>
@@ -56,11 +64,11 @@ const Navbar = () => {
                         Skills
                     </Link>
                 </li>
-                {/* <li className='navbar-elements'>
-                    <Link to='work' smooth={true} duration={500}>
-                        Work
+                <li className={navbar ? "hover:text-[#ff8000] navbar-elements" : 'navbar-not-scroll-elements'}>
+                    <Link to='projects' smooth={true} duration={500}>
+                        Projects
                     </Link>
-                </li> */}
+                </li>
                 <li className={navbar ? "hover:text-[#ff8000] navbar-elements" : 'navbar-not-scroll-elements'}>
                     <Link to='contact' smooth={true} duration={500}>
                         Contact
@@ -68,7 +76,7 @@ const Navbar = () => {
                 </li>
             </ul>
             {/* Hamburger */}
-            <div onClick={handleClick} className='md:hidden z-10'>
+            <div onClick={handleClick} className='md:hidden z-10 p-12'>
                 {!nav ? <FaBars /> : <FaTimes />}
             </div>
             {/* Mobile menu */}
@@ -96,12 +104,6 @@ const Navbar = () => {
                         Skills
                     </Link>
                 </li>
-                {/* <li className='py-6 text-4xl'>
-                    {' '}
-                    <Link onClick={handleClick} to='work' smooth={true} duration={500}>
-                        Work
-                    </Link>
-                </li> */}
                 <li className='py-6 text-4xl'>
                     {' '}
                     <Link onClick={handleClick} to='contact' smooth={true} duration={500}>
@@ -128,14 +130,6 @@ const Navbar = () => {
                             Github <FaGithub size={30} />
                         </a>
                     </li>
-                    {/* <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#6fc2b0]'>
-                        <a
-                            className='flex justify-between items-center w-full text-gray-300'
-                            href='javascript:void(0);kamulupraneeth@gmail.com'
-                        >
-                            Email <HiOutlineMail size={30} />
-                        </a>
-                    </li> */}
                     <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#565f69]'>
                         <a
                             className='flex justify-between items-center w-full text-gray-300'
