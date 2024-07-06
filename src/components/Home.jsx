@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { HiArrowNarrowRight } from 'react-icons/hi';
-import image from '../assets/image.png';
 import { Link } from "react-scroll";
-// import NameAnimation from './NameAnimation';
 import {ReactTyped} from 'react-typed';
 import bgImage from '../assets/bgImage.jpg';
 
