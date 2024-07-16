@@ -18,8 +18,8 @@ const Works = () => {
     </a>
 </div>
 <div class="flex items-center justify-center">
-    <a href="https://beta.froogal.ai/" target="_blank" class="w-48 h-48 bg-[#273248] rounded-md flex items-center justify-center shadow-lg shadow-[#040c16] font-bold transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 hover:bg-[#82401d] duration-300">
-        Froogal Dashboard
+    <a href="https://play.google.com/store/apps/details?id=com.bawarchibiryanis.app" target="_blank" class="w-48 h-48 bg-[#273248] rounded-md flex items-center justify-center shadow-lg shadow-[#040c16] font-bold transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 hover:bg-[#82401d] duration-300">
+        Bawarchi Biryanis
     </a>
 </div>
 <div class="flex items-center justify-center">

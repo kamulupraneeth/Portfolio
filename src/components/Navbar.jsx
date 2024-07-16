@@ -16,7 +16,11 @@ import Pdf from '../Documents/KAMULU_PRANEETH.pdf';
     const Navbar = ({setIsMenuOpen,isMenuOpen}) => {
     const [nav, setNav] = useState(false);
 
-    const [navbar, setNavbar] = useState(false);
+    const [navbar, showNavbar] = useState(false);
+
+    const [navbarBackground,setNavbarBackground] = useState(false);
+
+    let lastScrollY = 50;
 
     const handleClick = () => {
         if(isMenuOpen){
@@ -28,24 +32,39 @@ import Pdf from '../Documents/KAMULU_PRANEETH.pdf';
     }
 
     const changeBackground = () => {
-        if (window.scrollY >= 66) {
-            setNavbar(true)
+        if (window.scrollY > lastScrollY) {
+            showNavbar(true);
+            if(window.scrollY >= 200){
+                setNavbarBackground(true);
+            }else{
+                setNavbarBackground(false);
+            }
         } else {
-            setNavbar(false)
+            if(window.scrollY === 0){
+            setNavbarBackground(false);
         }
+        showNavbar(false);
+        }
+        lastScrollY = window.scrollY;
     }
 
     useEffect(() => {
-        changeBackground()
-        window.addEventListener("scroll", changeBackground)
-    })
+        window.addEventListener("scroll", changeBackground);
+        
+        return () => {
+            window.removeEventListener("scroll", changeBackground);
+        };
+    }, []);
 
-    const navbarClasses = navbar ? "fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#06141b] text-[#333] font-bold transition-all duration-500 ease-in-out" : "fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#b61a2b] text-gray-300"
+    const navbarClasses = `fixed w-full h-[80px] flex justify-between items-center px-4 font-bold z-10 navbar ${navbarBackground ? 'bg-[#080f11] text-[#fff]' : 'bg-transparent text-white'} ${
+        navbar ? 'opacity-0 -translate-y-full' : 'opacity-100 -translate-y-0 border-b border-[#a5a5a5]'
+    }`;
 
     return (
-        <div className={navbarClasses}>
+        <div>
+            <section className={navbarClasses}>
             <div>
-                <h1 className={navbar ? 'font-bold text-2xl rounded-lg py-[5px] px-[35px] bg-[#ff8000] text-[#fff]' : "font-extrabold text-2xl rounded-lg py-[0] px-[18px]"}>Portfolio</h1>
+                <h1 className='text-2xl ml-2'>Portfolio</h1>
             </div>
             {/* menu */}
             <ul className={navbar ? "hidden md:flex gap-x-8 tracking-[2px]" : 'hidden md:flex gap-x-8 tracking-[2px] font-semibold'}>
@@ -111,8 +130,9 @@ import Pdf from '../Documents/KAMULU_PRANEETH.pdf';
                     </Link>
                 </li>
             </ul>
+            </section>
             {/* Social icons */}
-            <div className='hidden lg:flex fixed flex-col top-[35%] left-0'>
+            <div className='hidden lg:flex fixed flex-col top-[35%] left-0 z-10'>
                 <ul>
                     <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-blue-600'>
                         <a

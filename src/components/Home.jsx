@@ -10,7 +10,7 @@ const Home = ({ isMenuOpen }) => {
       
         <div
             name="home"
-            className="h-screen w-full bg-[#BC382E] sm:w-full"
+            className="h-screen w-full sm:w-full"
             style={{backgroundImage:`url(${bgImage})`,backgroundSize:'cover',backgroundPosition:'center'}}
         > 
             <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-between h-full px-4 md:flex-row gap-4">
